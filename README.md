@@ -4,7 +4,8 @@ In this site you will find the following class materials (per folder):
 
 * `lectures`: all of the lecture notes. They will be published usually after
   class.
-* `in-class`: in-class exercises as well as their solutions.
+* `ice`: solutions to in-class exercises along with code versions of the
+  solutions.
 * `references`: lists of books, websites, etc. that you may find useful or
   interesting.
 
