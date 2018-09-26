@@ -25,14 +25,14 @@
 
 ## Websites
 
-* [cpp.sh](cpp.sh): A free, simple C++ shell. Useful for testing small
+* [cpp.sh](http://cpp.sh/): A free, simple C++ shell. Useful for testing small
    programs. Fully C++14 compatible (though C++17 features won't work).
-* [cppreference.com](cppreference.com): a *complete* specification of the
+* [cppreference.com](https://en.cppreference.com/w/): a *complete* specification of the
   language and the standard library. Everything and anything you could ever need
   is here. The specification is technical, but they sometimes provide live
   examples on how to use things. It is updated to the latest standard (C++20)
   and clearly notes what features belong to which standards.
-* [Stack Overflow](stackoverflow.com): good resource to check when you have
+* [Stack Overflow](https://stackoverflow.com/): good resource to check when you have
   specific questions about something. Generally very good about providing modern
   C++ solutions, just make sure to check before using anything, as they may not
   always include C++17 compliant alternatives.
