@@ -36,3 +36,5 @@
   specific questions about something. Generally very good about providing modern
   C++ solutions, just make sure to check before using anything, as they may not
   always include C++17 compliant alternatives.
+* [Katiss](https://open.kattis.com/problems): good resource of problems that you
+  can use for practice and review. Sort them by difficulty and try them out!
