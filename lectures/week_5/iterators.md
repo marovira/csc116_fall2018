@@ -51,20 +51,20 @@ is designed to do what the iterator for-loop does.
 The standard library has an entire section dedicated to functions that operate
 on iterators. You can see these under the `<algorithm>` header
 [here](https://en.cppreference.com/w/cpp/header/algorithm). What we will mostly
-focus on is on the way that certain functions, such as `std::search` work.
+focus on is on the way that certain functions, such as `std::find` work.
 
 ```c++
 std::vector<int> vec{1, 2, 3, 4};
 
 // Simple example, check if 3 is in the vector.
-auto result = std::search(vec.begin(), vec.end(), 3);
+auto result = std::find(vec.begin(), vec.end(), 3);
 if (result != vec.end())
 {
     std::cout << "Found the element!" << std::endl;
 }
 ```
 
-Let's take a look at this more closely. `std::search` takes 3 parameters: the
+Let's take a look at this more closely. `std::find` takes 3 parameters: the
 first two constitute the range in which we wish to search, and the final
 parameter is the element to search for. In this case, we wish to search through
 the entire vector for 3. The function then returns an iterator. Recall when we
@@ -80,7 +80,7 @@ return value that we otherwise had with indices.
 ## A Nice Optimization (C++17 only)
 In the previous example, we declared a variable called `result` whose scope
 would be whatever the function we were contained in was. Suppose that I made
-continuous queries to `search`. Then what would happen is one of two things:
+continuous queries to `find`. Then what would happen is one of two things:
 
 1. We re-use the same variable (which may not be ideal), or
 2. we declare a new variable each time.
@@ -91,7 +91,7 @@ where we use it (the `if` statement). With C++17 we can then do the following:
 ```c++
 std::vector<int> vec{1, 2, 3, 4};
 
-for (auto result = std::search(vec.begin(), vec.end()); result != vec.end())
+for (auto result = std::find(vec.begin(), vec.end()); result != vec.end())
 {
     // Do something.
 }
