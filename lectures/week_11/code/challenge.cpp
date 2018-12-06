@@ -22,15 +22,15 @@
 // 2. You are only allowed to use recursion.
 // 3. You may create additional functions as needed.
 
-using UnaryOperator = std::function<float(std::vector<float> const&)>;
+using UnaryOperator = std::function<void(float)>;
 using BinaryOperator = std::function<float(float, float)>;
-using Compute = std::function<float(std::vector<float> const&>);
+using Compute = std::function<float(std::vector<float> const&)>;
 
 void forEach(std::vector<float> const& data, UnaryOperator const& op)
 {
     for (auto elem : data)
     {
-        op(data);
+        op(elem);
     }
 }
 
@@ -44,7 +44,7 @@ float accumulate(std::vector<float> const& data, BinaryOperator const& op)
     return result;
 }
 
-void apply(std::vector<float> const& data, std::vector<Compute> const& operators)
+void applyOps(std::vector<float> const& data, std::vector<Compute> const& operators)
 {
     for (auto op : operators)
     {
@@ -56,21 +56,21 @@ void apply(std::vector<float> const& data, std::vector<Compute> const& operators
 int main()
 {
     std::vector<float> data{2.0f, 3.0f, 6.0f, 9.0f, 13.0f, 16.0f, 17.0f, 20.0f};
-    std::vector<Compute> operators;
+    std::vector<Compute> operations;
 
     // Define your operators here. The average operator is provided for you
     // as an example.
     auto average = [](std::vector<float> const& data)
     {
-        auto sum = accumulate(data [](float x, float y) { return x + y; });
+        auto sum = accumulate(data, [](float x, float y) { return x + y; });
         return sum / data.size();
     };
 
-    operators.push_back(average);
-    operators.push_back(variance);
-    operators.push_back(min);
-    operators.push_back(max);
+    operations.push_back(average);
+    //operators.push_back(variance);
+    //operators.push_back(min);
+    //operators.push_back(max);
 
-    apply(data, operators);
+    applyOps(data, operations);
     return 0;
 }

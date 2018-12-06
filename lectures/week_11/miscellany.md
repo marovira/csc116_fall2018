@@ -151,7 +151,7 @@ restrictions:
 To aide you in your task, you are given the following set of definitions:
 
 ```c++
-using UnaryOperator = std::function<float(std::vector<float> const&)>;
+using UnaryOperator = std::function<void(float)>;
 using BinaryOperator = std::function<float(float, float)>;
 using Compute = std::function<float(std::vector<float> const&>);
 ```
@@ -165,7 +165,7 @@ void forEach(std::vector<float> const& data, UnaryOperator const& op)
 {
     for (auto elem : data)
     {
-        op(data);
+        op(elem);
     }
 }
 ```
